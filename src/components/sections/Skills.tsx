@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeader } from "@/components/ui/section-header";
 import { portfolioData } from "@/data/portfolio";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
 import {
   SiAmazon,
   SiAngular,
@@ -33,7 +34,7 @@ import {
 } from "react-icons/si";
 
 // Map string names to components
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, IconType> = {
   SiNextdotjs: SiNextdotjs,
   SiReact: SiReact,
   SiTypescript: SiTypescript,

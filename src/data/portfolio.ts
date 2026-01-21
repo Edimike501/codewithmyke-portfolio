@@ -185,18 +185,31 @@ export const portfolioData = {
         "Figma"
       ],
       image: "/projects/nebula.jpg",
-      links: { demo: "https://demo.com", github: "https://github.com" },
+      links: { demo: "https://yunospace.com", github: "https://github.com" },
       featured: true
     },
     {
       id: "2",
-      title: "Orbit Mobile",
+      title: "ViceLamoda Collectives",
       description:
-        "Cross-platform mobile application for managing IoT devices in smart homes.",
-      category: "Mobile App",
-      techStack: ["React Native", "Expo", "GraphQL", "Bluetooth"],
-      image: "/projects/orbit.jpg",
-      links: { demo: "https://appstore.com" },
+        "Discover exclusive luxury fashion collections. Vicelamoda Collectives brings you the finest in modern style and elegance.",
+      category: "Web App",
+      techStack: [
+        "Next.js",
+        "Tailwind",
+        "Figma",
+        "Paystack",
+        "Stripe",
+        "Firebase",
+        "Express.js",
+        "Redis",
+        "MongoDB"
+      ],
+      image: "/vicelamoda.png",
+      links: {
+        demo: "https://vicelamoda.fashion",
+        github: "https://github.com/D3v-Myk3/vicelamoda-store/"
+      },
       featured: true
     },
     {

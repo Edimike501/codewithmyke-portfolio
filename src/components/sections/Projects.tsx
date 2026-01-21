@@ -11,10 +11,53 @@ import {
   CardTitle
 } from "@/components/ui/card";
 import { SectionHeader } from "@/components/ui/section-header";
-import { portfolioData, ProjectCategory } from "@/data/portfolio";
+import { portfolioData, Project, ProjectCategory } from "@/data/portfolio";
 import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, Github, Layers } from "lucide-react";
 import { useState } from "react";
+
+function ProjectThumbnail({ project }: { project: Project }) {
+  const [imgError, setImgError] = useState(false);
+  const showIframe = project.category === "Web App" && project.links.demo;
+
+  return (
+    <div className="relative w-full h-72 bg-muted/30 overflow-hidden border-b border-border/50 group-hover:border-primary/20 transition-colors">
+      {showIframe ? (
+        <iframe
+          src={project.links.demo}
+          className="w-full h-full object-cover pointer-events-none"
+          title={project.title}
+          loading="lazy"
+        />
+      ) : project.image && !imgError ? (
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 group-hover:scale-105 transition-transform duration-700" />
+          <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity duration-500">
+            <Layers className="w-16 h-16 text-primary/50" />
+          </div>
+        </>
+      )}
+
+      <div className="absolute inset-0 bg-black/60 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+
+      {/* Category Badge overlay */}
+      <div className="absolute top-4 left-4 pointer-events-none">
+        <Badge
+          variant="secondary"
+          className="backdrop-blur-md bg-background/50">
+          {project.category}
+        </Badge>
+      </div>
+    </div>
+  );
+}
 
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState<"All" | ProjectCategory>(
@@ -71,27 +114,7 @@ export function Projects() {
                 transition={{ duration: 0.3 }}
                 key={project.id}>
                 <Card className="h-full flex flex-col group hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 bg-card/40 backdrop-blur-sm">
-                  {/* Image Area placeholder since we don't have real images yet, sticking to a colored block or icon */}
-                  <div className="relative w-full h-48 bg-muted/30 overflow-hidden border-b border-border/50 group-hover:border-primary/20 transition-colors">
-                    {/*
-                         In a real scenario, use next/image here.
-                         For now, we use a pattern or gradient.
-                     */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 group-hover:scale-105 transition-transform duration-700" />
-
-                    <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity duration-500">
-                      <Layers className="w-16 h-16 text-primary/50" />
-                    </div>
-
-                    {/* Category Badge overlay */}
-                    <div className="absolute top-4 left-4">
-                      <Badge
-                        variant="secondary"
-                        className="backdrop-blur-md bg-background/50">
-                        {project.category}
-                      </Badge>
-                    </div>
-                  </div>
+                  <ProjectThumbnail project={project} />
 
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">

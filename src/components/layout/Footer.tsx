@@ -1,9 +1,10 @@
 import { portfolioData } from "@/data/portfolio";
 import { Github, Linkedin, Terminal, Twitter, X } from "lucide-react";
+import { IconType } from "react-icons";
 import { FaWhatsapp } from "react-icons/fa6";
 
 export function Footer() {
-  const iconMap: Record<string, any> = {
+  const iconMap: Record<string, IconType> = {
     Github: Github,
     Linkedin: Linkedin,
     Twitter: Twitter,
