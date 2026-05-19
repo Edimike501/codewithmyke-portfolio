@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://your-domain.com",
     title: portfolioData.identity.name,
-    description: portfolioData.about.bio,
+    description: portfolioData.about.bio.join(" "),
     siteName: portfolioData.identity.name,
     images: [
       {

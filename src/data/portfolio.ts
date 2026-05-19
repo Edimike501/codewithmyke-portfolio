@@ -14,6 +14,14 @@ export interface SocialLink {
 export interface Stat {
   label: string;
   value: string;
+  description: string;
+  icon: string;
+}
+
+export interface Feature {
+  title: string;
+  description: string;
+  icon: string;
 }
 
 export interface Skill {
@@ -75,11 +83,11 @@ export const portfolioData = {
         url: "https://www.linkedin.com/in/edimike-edimike-201ba225a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         icon: "Linkedin"
       },
-      { platform: "Twitter", url: "https://x.com/D3v_Myk3", icon: "Twitter" },
+      // { platform: "Twitter", url: "https://x.com/D3v_Myk3", icon: "Twitter" },
       { platform: "X", url: "https://x.com/D3v_Myk3", icon: "X" },
       {
         platform: "Whatsapp",
-        url: "https://wa.me/2349137157207",
+        url: "https://wa.me/2349128093115",
         icon: "Whatsapp"
       }
     ] as SocialLink[]
@@ -98,19 +106,65 @@ export const portfolioData = {
   hero: {
     heading: "Building High-Performance Digital Realities.",
     subheading:
-      "A multidisciplinary technologist focused on scalable architecture, interactive UI, and next-gen SaaS solutions.",
+      "Backend-focused Software Engineer specializing in scalable web architectures, API systems, automation workflows, and full-stack applications using TypeScript, Express.js, NextJS, and Python.",
+    /* "I design and build scalable backend infrastructures, automation-driven systems, and modern full-stack applications with TypeScript, Python, and cloud technologies.", */
     ctaPrimary: "View Work",
-    ctaSecondary: "Contact Me"
+    ctaSecondary: "Get In Touch"
   },
 
   // 4. About Section
   about: {
-    bio: "With over a decade of experience in the software industry, I bridge the gap between complex backend logic and fluid frontend design. I specialize in building systems that are not just functional, but intuitive and visually striking. My work is driven by a passion for clean code, performance optimization, and futuristic aesthetics.",
+    bio: [
+      "I'm a full-stack software engineer who builds reliable, scalable and maintainable digital systems. My primary focus is backend engineering—designing APIs, data models, and system architectures that power high-performance applications.",
+      "I also enjoy crafting clean, intuitive frontends that deliver smooth user experiences and connect seamlessly with powerful backend services."
+    ],
+    features: [
+      {
+        title: "Backend First",
+        description: "APIs, Services, Databases",
+        icon: "Database"
+      },
+      {
+        title: "Full-Stack",
+        description: "Frontend + Backend Integration",
+        icon: "Code2"
+      },
+      {
+        title: "AI & Automation",
+        description: "Python, AI Workflows & Integrations",
+        icon: "Brain"
+      },
+      {
+        title: "Cloud Ready",
+        description: "Docker, AWS & Scalable Deployments",
+        icon: "Cloud"
+      }
+    ] as Feature[],
     stats: [
-      { label: "Years Experience", value: "5+" },
-      { label: "Projects Shipped", value: "10+" },
-      { label: "Coffee Consumed", value: "∞" },
-      { label: "Users Impacted", value: "1k+" }
+      {
+        label: "YEARS EXPERIENCE",
+        value: "5+",
+        description: "Building and delivering production-ready systems",
+        icon: "Calendar"
+      },
+      {
+        label: "PROJECTS DELIVERED",
+        value: "10+",
+        description: "Web apps, APIs, platforms and automation tools",
+        icon: "Rocket"
+      },
+      {
+        label: "CUPS OF COFFEE",
+        value: "∞",
+        description: "Fuel for solving complex problems",
+        icon: "Coffee"
+      },
+      {
+        label: "USERS IMPACTED",
+        value: "1k+",
+        description: "Through systems that solve real-world problems",
+        icon: "Users"
+      }
     ] as Stat[]
   },
 
@@ -122,7 +176,7 @@ export const portfolioData = {
         { name: "Javascript", icon: "SiJavascript" },
         { name: "Typescript", icon: "SiTypescript" },
         { name: "Python", icon: "SiPython" },
-        { name: "Rust", icon: "SiRust" },
+        // { name: "Rust", icon: "SiRust" },
         { name: "PHP", icon: "SiPhp" }
       ]
     },
@@ -133,10 +187,10 @@ export const portfolioData = {
         { name: "React", icon: "SiReact" },
         { name: "TypeScript", icon: "SiTypescript" },
         { name: "Tailwind", icon: "SiTailwindcss" },
-        { name: "Figma", icon: "SiFigma" },
+        // { name: "Figma", icon: "SiFigma" },
         { name: "Vue.js", icon: "SiVuedotjs" },
-        { name: "Svelte", icon: "SiSvelte" },
-        { name: "Angular", icon: "SiAngular" },
+        // { name: "Svelte", icon: "SiSvelte" },
+        // { name: "Angular", icon: "SiAngular" },
         { name: "React Native", icon: "SiReactnative" }
       ]
     },
@@ -145,13 +199,13 @@ export const portfolioData = {
       skills: [
         { name: "Node.js", icon: "SiNodedotjs" },
         { name: "Express.js", icon: "SiExpress" },
-        { name: "DJango", icon: "SiDjango" },
+        // { name: "DJango", icon: "SiDjango" },
         { name: "MySQL", icon: "SiMysql" },
         { name: "PostgreSQL", icon: "SiPostgresql" },
         { name: "MongoDB", icon: "SiMongodb" },
         { name: "Redis", icon: "SiRedis" },
         { name: "Prisma", icon: "SiPrisma" },
-        { name: "AWS", icon: "SiAmazonaws" },
+        // { name: "AWS", icon: "SiAmazonaws" },
         { name: "Docker", icon: "SiDocker" },
         { name: "Firebase", icon: "SiFirebase" },
         { name: "Supabase", icon: "SiSupabase" }
@@ -160,9 +214,9 @@ export const portfolioData = {
     {
       title: "Advanced",
       skills: [
-        { name: "Rust", icon: "SiRust" },
-        { name: "GraphQL", icon: "SiGraphql" },
-        { name: "WebAssembly", icon: "SiWebassembly" }
+        // { name: "Rust", icon: "SiRust" },
+        { name: "GraphQL", icon: "SiGraphql" }
+        // { name: "WebAssembly", icon: "SiWebassembly" }
       ]
     }
   ] as SkillCategory[],
@@ -214,36 +268,47 @@ export const portfolioData = {
     },
     {
       id: "3",
-      title: "Synthetix Core",
+      title: "Pricis",
       description:
-        "Open-source CLI tool for generating microservice boilerplate code instantly.",
-      category: "Software",
-      techStack: ["Rust", "Clap", "Tokio"],
-      image: "/projects/cli.jpg",
-      links: { github: "https://github.com" },
-      featured: false
-    },
-    {
-      id: "4",
-      title: "Vortex SaaS",
-      description:
-        "AI-powered content generation platform for enterprise marketing teams.",
-      category: "SaaS",
-      techStack: ["Next.js", "OpenAI API", "Stripe", "Supabase"],
-      image: "/projects/vortex.jpg",
-      links: { demo: "https://vortex.com", github: "https://github.com" },
+        "Pricis generates professional pricing and scope documents in seconds — so you stop undercharging and start getting paid what your work is worth.",
+      category: "Web App",
+      techStack: [
+        "Next.js",
+        "Tailwind",
+        "Figma",
+        "Firebase",
+        "Express.js",
+        "MongoDB"
+      ],
+      image: "/vicelamoda.png",
+      links: {
+        demo: "https://pricis-web.vercel.app",
+        github: ""
+      },
       featured: true
     },
     {
-      id: "5",
-      title: "HealthSpace Startup",
+      id: "4",
+      title: "Techclime Solutions",
       description:
-        "Telehealth startup platform connecting patients with specialists in under 5 minutes.",
-      category: "Startup",
-      techStack: ["Vue.js", "Firebase", "WebRTC"],
-      image: "/projects/health.jpg",
-      links: { demo: "https://healthspace.com" },
-      featured: false
+        "Join a community of innovators. From premium coworking spaces to world-class tech education and expert consulting – all in one place.",
+      category: "Web App",
+      techStack: [
+        "Next.js",
+        "Tailwind",
+        "Figma",
+        "Paystack",
+        "OAuth",
+        "Express.js",
+        "Redis",
+        "PostgreSQL"
+      ],
+      image: "/techclime.png",
+      links: {
+        demo: "https://techclimesolutions.com",
+        github: ""
+      },
+      featured: true
     }
   ] as Project[],
 
@@ -253,19 +318,19 @@ export const portfolioData = {
       companyName: "Weblizz Network",
       role: "Lead Software Architect/Engineer",
       logo: "/partners/technova.svg",
-      url: "https://technova.io"
+      url: "#"
     },
     {
-      companyName: "GreenGrid",
-      role: "Lead Architect",
+      companyName: "Techclime Solutions",
+      role: "Lead Software Architect/Engineer",
       logo: "/partners/greengrid.svg",
-      url: "https://greengrid.energy"
+      url: "https://techclimesolutions.com"
     },
     {
       companyName: "Alpha Ventures",
       role: "Co-Founder",
       logo: "/partners/alpha.svg",
-      url: "https://alphaventures.vc"
+      url: "#"
     }
   ] as Partnership[]
 };

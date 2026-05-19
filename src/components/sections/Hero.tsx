@@ -26,12 +26,14 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Available for freelance work
+            Backend Engineer • Full-Stack Systems • AI Automation
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-            Building the <span className="text-gradient">future</span> of
-            digital experiences.
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            Engineering scalable
+            <br />
+            <span className="text-gradient">digital systems</span> for modern
+            businesses.
           </h1>
 
           <p className="text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
@@ -73,39 +75,41 @@ export function Hero() {
 
             {/* Code Content */}
             <div className="p-6 font-mono text-sm overflow-hidden">
-              <div className="text-muted-foreground mb-2">
-                import <span className="text-primary">React</span> from 'react';
+              <div className="mb-1">
+                <span className="text-secondary">async function</span>{" "}
+                <span className="text-yellow-400">buildSystems</span>() {"{"}
               </div>
-              <div className="text-muted-foreground mb-4">
-                import <span className="text-secondary">{"{ Future }"}</span>{" "}
-                from 'universe';
+              <div className="pl-4 mb-1">
+                <span className="text-secondary">return</span>{" "}
+                <span className="text-primary">scalable</span>({"{"}
               </div>
-
-              <div className="pl-4 border-l-2 border-border mb-4">
-                <span className="text-secondary">const</span>{" "}
-                <span className="text-yellow-400">Architect</span> = () ={">"}{" "}
-                {"{"}
-                <br />
-                &nbsp;&nbsp;<span className="text-secondary">return</span> (
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&lt;
-                <span className="text-primary">DigitalReality</span>
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span className="text-purple-400">performance</span>={"{{"}{" "}
-                <span className="text-green-400">speed: '100%'</span> {"}}"}
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span className="text-purple-400">design</span>={"{{"}{" "}
-                <span className="text-green-400">vision: 'infinite'</span>{" "}
-                {"}}"}
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;/&gt;
-                <br />
-                &nbsp;&nbsp;);
-                <br />
-                {"}"}
+              <div className="pl-8 mb-1">
+                <span className="text-purple-400">frontend</span>: [
+                <span className="text-green-400">&#34;NextJS&#34;</span>,{" "}
+                <span className="text-green-400">&#34;React JS&#34;</span>,{" "}
+                <span className="text-green-400">&#34;Vue JS&#34;</span>],
               </div>
+              <div className="pl-8 mb-1">
+                <span className="text-purple-400">backend</span>: [
+                <span className="text-green-400">&#34;Express.js&#34;</span>,{" "}
+                <span className="text-green-400">&#34;NestJS&#34;</span>],
+              </div>
+              <div className="pl-8 mb-1">
+                <span className="text-purple-400">database</span>: [
+                <span className="text-green-400">&#34;MySQL&#34;</span>,{" "}
+                <span className="text-green-400">&#34;PostgreSQL&#34;</span>,{" "}
+                <span className="text-green-400">&#34;MongoDB&#34;</span>],
+              </div>
+              <div className="pl-8 mb-1">
+                <span className="text-purple-400">automation</span>:{" "}
+                <span className="text-green-400">&#34;Python&#34;</span>,
+              </div>
+              <div className="pl-8 mb-1">
+                <span className="text-purple-400">deployment</span>:{" "}
+                <span className="text-green-400">&#34;cloud&#34;</span>
+              </div>
+              <div className="pl-4 mb-1">{"});"}</div>
+              <div className="mb-4">{"}"}</div>
 
               <div className="mt-4 flex gap-2">
                 <span className="text-muted-foreground">
