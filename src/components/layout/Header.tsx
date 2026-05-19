@@ -72,9 +72,11 @@ export function Header() {
               {item.name}
             </ScrollLink>
           ))}
-          <Button variant="neon" size="sm" className="ml-4">
-            Resume
-          </Button>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="ml-4">
+            <Button variant="neon" size="sm">
+              Resume
+            </Button>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -109,6 +111,15 @@ export function Header() {
                   {item.name}
                 </ScrollLink>
               ))}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}>
+                <Button variant="neon" size="sm" className="w-full mt-2">
+                  Resume
+                </Button>
+              </a>
             </div>
           </motion.div>
         )}
