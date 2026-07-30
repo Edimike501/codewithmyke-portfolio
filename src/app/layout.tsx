@@ -1,6 +1,8 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { portfolioData } from "@/data/portfolio";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -82,6 +84,8 @@ export default function RootLayout({
         <Header />
         <main className="flex flex-col">{children}</main>
         <Footer />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
