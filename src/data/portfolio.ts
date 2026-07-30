@@ -80,7 +80,8 @@ export const portfolioData = {
       },
       {
         platform: "LinkedIn",
-        url: "https://www.linkedin.com/in/edimike-edimike-201ba225a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        url: "https://www.linkedin.com/in/osinachi-michael/",
+        // url: "https://www.linkedin.com/in/edimike-edimike-201ba225a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         icon: "Linkedin"
       },
       // { platform: "Twitter", url: "https://x.com/D3v_Myk3", icon: "Twitter" },
@@ -225,25 +226,52 @@ export const portfolioData = {
   projects: [
     {
       id: "1",
-      title: "Yunospace",
+      title: "Techclime Solutions",
       description:
-        "An Ed-Tech platform for remote learning and collaboration with schools.",
+        "Join a community of innovators. From premium coworking spaces to world-class tech education and expert consulting – all in one place.",
       category: "Web App",
       techStack: [
         "Next.js",
-        "WebSockets",
+        "Tailwind",
+        "Figma",
+        "Paystack",
+        "OAuth",
         "Express.js",
         "Redis",
-        "MySQL",
-        "Tailwind",
-        "Figma"
+        "PostgreSQL"
       ],
-      image: "/projects/nebula.jpg",
-      links: { demo: "https://yunospace.com", github: "https://github.com" },
+      image: "/techclime.png",
+      links: {
+        demo: "https://techclimesolutions.com",
+        github: ""
+      },
       featured: true
     },
     {
       id: "2",
+      title: "Techclime Solutions Bootcamp",
+      description:
+        "Empowering the next generation of tech talent through intensive, hands-on coding, design, and business training cohorts. Delivered physically and online.",
+      category: "Web App",
+      techStack: [
+        "Next.js",
+        "Tailwind",
+        "Figma",
+        "Paystack",
+        "Typescript",
+        "Redis",
+        "MongoDB",
+        "PostgreSQL"
+      ],
+      image: "/techclime.png",
+      links: {
+        demo: "https://skillup.techclimesolutions.com",
+        github: ""
+      },
+      featured: true
+    },
+    {
+      id: "3",
       title: "ViceLamoda Collectives",
       description:
         "Discover exclusive luxury fashion collections. Vicelamoda Collectives brings you the finest in modern style and elegance.",
@@ -267,7 +295,7 @@ export const portfolioData = {
       featured: true
     },
     {
-      id: "3",
+      id: "4",
       title: "Pricis",
       description:
         "Pricis generates professional pricing and scope documents in seconds — so you stop undercharging and start getting paid what your work is worth.",
@@ -287,27 +315,24 @@ export const portfolioData = {
       },
       featured: true
     },
+
     {
-      id: "4",
-      title: "Techclime Solutions",
+      id: "5",
+      title: "Yunospace",
       description:
-        "Join a community of innovators. From premium coworking spaces to world-class tech education and expert consulting – all in one place.",
+        "An Ed-Tech platform for remote learning and collaboration with schools.",
       category: "Web App",
       techStack: [
         "Next.js",
-        "Tailwind",
-        "Figma",
-        "Paystack",
-        "OAuth",
+        "WebSockets",
         "Express.js",
         "Redis",
-        "PostgreSQL"
+        "MySQL",
+        "Tailwind",
+        "Figma"
       ],
-      image: "/techclime.png",
-      links: {
-        demo: "https://techclimesolutions.com",
-        github: ""
-      },
+      image: "/projects/nebula.jpg",
+      links: { demo: "https://yunospace.com", github: "https://github.com" },
       featured: true
     }
   ] as Project[],
