@@ -5,8 +5,8 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { portfolioData } from "@/data/portfolio";
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
+import { FaAmazon } from "react-icons/fa6";
 import {
-  SiAmazon,
   SiAngular,
   SiDjango,
   SiDocker,
@@ -43,7 +43,7 @@ const iconMap: Record<string, IconType> = {
   SiPostgresql: SiPostgresql,
   SiMysql: SiMysql,
   SiRedis: SiRedis,
-  SiAmazonaws: SiAmazon,
+  SiAmazonaws: FaAmazon,
   SiDocker: SiDocker,
   SiRust: SiRust,
   SiGraphql: SiGraphql,
