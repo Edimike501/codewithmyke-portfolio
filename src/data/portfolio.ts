@@ -249,6 +249,30 @@ export const portfolioData = {
     },
     {
       id: "2",
+      title: "Opollo Luxury Properties Ltd",
+      description:
+        "Premium real estate development, sales & consultancy in Lagos. Expert property investment and transparent legal solutions for local and diaspora buyers.",
+      category: "Web App",
+      techStack: [
+        "Next.js",
+        "Tailwind",
+        "Figma",
+        "Paystack",
+        "Typescript",
+        "Redis",
+        "Prisma",
+        "Cloudinary",
+        "PostgreSQL"
+      ],
+      image: "/opollo-luxury.png",
+      links: {
+        demo: "https://www.opolloluxuries.com",
+        github: ""
+      },
+      featured: true
+    },
+    {
+      id: "3",
       title: "Techclime Solutions Bootcamp",
       description:
         "Empowering the next generation of tech talent through intensive, hands-on coding, design, and business training cohorts. Delivered physically and online.",
@@ -271,7 +295,7 @@ export const portfolioData = {
       featured: true
     },
     {
-      id: "3",
+      id: "4",
       title: "ViceLamoda Collectives",
       description:
         "Discover exclusive luxury fashion collections. Vicelamoda Collectives brings you the finest in modern style and elegance.",
@@ -295,7 +319,7 @@ export const portfolioData = {
       featured: true
     },
     {
-      id: "4",
+      id: "5",
       title: "Pricis",
       description:
         "Pricis generates professional pricing and scope documents in seconds — so you stop undercharging and start getting paid what your work is worth.",
@@ -317,7 +341,7 @@ export const portfolioData = {
     },
 
     {
-      id: "5",
+      id: "6",
       title: "Yunospace",
       description:
         "An Ed-Tech platform for remote learning and collaboration with schools.",
