@@ -266,7 +266,7 @@ export const portfolioData = {
       ],
       image: "/opollo-luxury.png",
       links: {
-        demo: "https://www.opolloluxuries.com",
+        demo: "https://opolloluxuries.com",
         github: ""
       },
       featured: true
