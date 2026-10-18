@@ -16,6 +16,7 @@ import {
   SiJavascript,
   SiMongodb,
   SiMysql,
+  SiNestjs,
   SiNextdotjs,
   SiNodedotjs,
   SiPhp,
@@ -35,6 +36,7 @@ import {
 
 // Map string names to components
 const iconMap: Record<string, IconType> = {
+  SiNestjs: SiNestjs,
   SiNextdotjs: SiNextdotjs,
   SiReact: SiReact,
   SiTypescript: SiTypescript,

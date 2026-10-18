@@ -45,6 +45,7 @@ export interface Project {
   id: string;
   title: string;
   description: string;
+  architecture?: string;
   category: ProjectCategory;
   techStack: string[];
   image: string; // Path to image in public folder
@@ -53,6 +54,22 @@ export interface Project {
     github?: string;
   };
   featured: boolean;
+}
+
+export interface ArchitecturePillar {
+  title: string;
+  tagline: string;
+  description: string;
+  icon: string;
+  badge: string;
+  highlights: string[];
+}
+
+export interface ArchitectureData {
+  title: string;
+  subtitle: string;
+  summary: string;
+  pillars: ArchitecturePillar[];
 }
 
 export interface Partnership {
@@ -98,6 +115,7 @@ export const portfolioData = {
   navItems: [
     { name: "About", link: "about" },
     { name: "Stack", link: "stack" },
+    { name: "Architecture", link: "architecture" },
     { name: "Projects", link: "projects" },
     { name: "Partners", link: "partners" },
     { name: "Contact", link: "contact" }
@@ -107,7 +125,7 @@ export const portfolioData = {
   hero: {
     heading: "Building High-Performance Digital Realities.",
     subheading:
-      "Backend-focused Software Engineer specializing in scalable web architectures, API systems, automation workflows, and full-stack applications using TypeScript, Express.js, NextJS, and Python.",
+      "Backend-focused Software Engineer specializing in scalable web architectures, API systems, automation workflows, and full-stack applications using TypeScript, NestJS, Express.js, NextJS, and Python.",
     /* "I design and build scalable backend infrastructures, automation-driven systems, and modern full-stack applications with TypeScript, Python, and cloud technologies.", */
     ctaPrimary: "View Work",
     ctaSecondary: "Get In Touch"
@@ -198,6 +216,7 @@ export const portfolioData = {
     {
       title: "Backend & Cloud",
       skills: [
+        { name: "NestJS", icon: "SiNestjs" },
         { name: "Node.js", icon: "SiNodedotjs" },
         { name: "Express.js", icon: "SiExpress" },
         // { name: "DJango", icon: "SiDjango" },
@@ -222,8 +241,129 @@ export const portfolioData = {
     }
   ] as SkillCategory[],
 
-  // 6. Projects (Grouped by your requested categories)
+  // 6. Architecture & System Design
+  architecture: {
+    title: "Development Architecture",
+    subtitle: "Modern paradigms engineered for scale, maintainability, and sub-millisecond response times.",
+    summary:
+      "A principled approach to building resilient digital systems. By choosing modular monoliths, monorepo workspaces, and multi-tier caching architectures, complex software products can scale gracefully without suffering from premature microservice overhead.",
+    pillars: [
+      {
+        title: "Modular Monolith",
+        tagline: "High Cohesion, Strict Boundaries",
+        badge: "Backend Paradigm",
+        icon: "Boxes",
+        description:
+          "Structuring the backend around strictly isolated, domain-driven modules (Auth, Catalog, Orders, Logistics, Payments) within a single deployable unit. Delivers strong boundary separation and zero network latency without distributed microservice complexity.",
+        highlights: [
+          "Domain-driven bounded contexts",
+          "ACID transactional guarantees across modules",
+          "Zero inter-service network latency",
+          "Clean path for future microservice extraction"
+        ]
+      },
+      {
+        title: "Monorepo (pnpm Workspaces)",
+        tagline: "Single Source of Truth",
+        badge: "Codebase Structure",
+        icon: "Workflow",
+        description:
+          "Consolidating applications (Web, Admin, API) and shared libraries (@shared, @ui, @hooks) in a single unified workspace. Ensures end-to-end type safety, atomic multi-package refactors, and zero dependency divergence.",
+        highlights: [
+          "Shared Zod validation schemas & domain enums",
+          "Unified design system and UI tokens",
+          "Atomic cross-app commits and PRs",
+          "Shared typed API query hooks across frontends"
+        ]
+      },
+      {
+        title: "Turborepo Orchestration",
+        tagline: "High-Performance Build System",
+        badge: "Build & Pipelines",
+        icon: "Zap",
+        description:
+          "Supercharging build, typecheck, lint, and test pipelines with intelligent dependency graphs. Turborepo executes tasks in parallel and fingerprints inputs/outputs to ensure work is never duplicated.",
+        highlights: [
+          "Intelligent topological task scheduling",
+          "Local & remote computation caching",
+          "Substantially faster CI/CD pipelines",
+          "Deterministic build artifact verification"
+        ]
+      },
+      {
+        title: "Multi-Tier Caching (Redis & Memcached)",
+        tagline: "Distributed State & Query Acceleration",
+        badge: "Performance & Scale",
+        icon: "Database",
+        description:
+          "Deploying a dual-tier caching strategy engineered for maximum throughput: Redis as a distributed in-memory data store for stateful session persistence and HttpOnly refresh-token rotation; complemented by Memcached / In-Memory LRU for ultra-fast database query and object caching.",
+        highlights: [
+          "Redis for session management & token rotation",
+          "Memcached / In-Memory for sub-millisecond query caches",
+          "Intelligent invalidation & stale-while-revalidate gates",
+          "Significant database read load reduction"
+        ]
+      }
+    ] as ArchitecturePillar[]
+  },
+
+  // 7. Projects (Grouped by your requested categories)
   projects: [
+    {
+      id: "afritrade-marketplace",
+      title: "AfriTrade Connect - Marketplace & Workflow",
+      description:
+        "A digital B2B marketplace and integrated logistics ecosystem built to demonstrate how technology can drastically reduce intra-African trade friction under the AfCFTA framework. Features buyer procurement, multi-currency catalogs, supplier onboarding with automated KYB verification, and end-to-end shipment milestone tracking across Nigeria, South Africa, and Ghana.",
+      architecture:
+        "Architected within a pnpm + Turborepo monorepo. Built on a NestJS modular monolith backend with Prisma ORM, PostgreSQL, and Redis token caching. Consumes shared Zod schemas and minor-unit money arithmetic via @afritrade/shared, paired with 3-tier TanStack Query hooks via @afritrade/hooks for seamless state synchronization.",
+      category: "Web App",
+      techStack: [
+        "NestJS",
+        "Next.js 15",
+        "Turborepo",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Redis",
+        "Zod",
+        "TanStack Query",
+        "Tailwind CSS",
+        "Paystack"
+      ],
+      image: "/techclime.png",
+      links: {
+        demo: "https://afritrade.techclimesolutions.com/",
+        github: "https://github.com/Edimike501/afritrade-public"
+      },
+      featured: true
+    },
+    {
+      id: "afritrade-admin",
+      title: "AfriTrade Admin - Operations & Compliance Console",
+      description:
+        "A specialized operations management center and compliance portal for platform administrators. Powers supplier KYB document review queues, freight logistics assignment, real-time shipment status transitions, user governance, and cross-border trade dispute resolution.",
+      architecture:
+        "Next.js 15 App Router admin portal directly interfaced with the NestJS modular monolith. Implements strict Role-Based Access Control (RBAC), Cloudflare R2 short-lived signed URLs for confidential KYB document inspection, and administrative order state transitions.",
+      category: "Web App",
+      techStack: [
+        "Next.js 15",
+        "NestJS",
+        "Turborepo",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Redis",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Cloudflare R2"
+      ],
+      image: "/techclime.png",
+      links: {
+        demo: "https://afritrade-admin.techclimesolutions.com/",
+        github: "https://github.com/Edimike501/afritrade-public"
+      },
+      featured: true
+    },
     {
       id: "1",
       title: "Techclime Solutions",
