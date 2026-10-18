@@ -14,6 +14,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { portfolioData, Project, ProjectCategory } from "@/data/portfolio";
 import { AnimatePresence, motion } from "framer-motion";
 import { ExternalLink, Github, Layers } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 function ProjectThumbnail({ project }: { project: Project }) {
@@ -30,10 +31,12 @@ function ProjectThumbnail({ project }: { project: Project }) {
           loading="lazy"
         />
       ) : project.image && !imgError ? (
-        <img
+        <Image
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-700"
           onError={() => setImgError(true)}
         />
       ) : (
@@ -131,9 +134,21 @@ export function Projects() {
                         </a>
                       )}
                     </div>
-                    <CardDescription className="line-clamp-2">
+                    <CardDescription className="line-clamp-3">
                       {project.description}
                     </CardDescription>
+
+                    {project.architecture && (
+                      <div className="mt-3 p-3 rounded-lg bg-primary/5 border border-primary/20 text-xs text-muted-foreground">
+                        <div className="flex items-center gap-1.5 font-mono font-semibold text-[11px] text-primary uppercase tracking-wider mb-1">
+                          <Layers className="w-3.5 h-3.5" />
+                          System Architecture
+                        </div>
+                        <p className="leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                          {project.architecture}
+                        </p>
+                      </div>
+                    )}
                   </CardHeader>
 
                   <CardContent className="mt-auto">
