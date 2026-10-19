@@ -54,6 +54,7 @@ export interface Project {
     github?: string;
   };
   featured: boolean;
+  render?: boolean;
 }
 
 export interface ArchitecturePillar {
@@ -93,22 +94,22 @@ export const portfolioData = {
       {
         platform: "GitHub",
         url: "https://github.com/Edimike501",
-        icon: "Github"
+        icon: "Github",
       },
       {
         platform: "LinkedIn",
         url: "https://www.linkedin.com/in/osinachi-michael/",
         // url: "https://www.linkedin.com/in/edimike-edimike-201ba225a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        icon: "Linkedin"
+        icon: "Linkedin",
       },
       // { platform: "Twitter", url: "https://x.com/D3v_Myk3", icon: "Twitter" },
       { platform: "X", url: "https://x.com/D3v_Myk3", icon: "X" },
       {
         platform: "Whatsapp",
         url: "https://wa.me/2349128093115",
-        icon: "Whatsapp"
-      }
-    ] as SocialLink[]
+        icon: "Whatsapp",
+      },
+    ] as SocialLink[],
   },
 
   // 2. Navigation
@@ -118,7 +119,7 @@ export const portfolioData = {
     { name: "Architecture", link: "architecture" },
     { name: "Projects", link: "projects" },
     { name: "Partners", link: "partners" },
-    { name: "Contact", link: "contact" }
+    { name: "Contact", link: "contact" },
   ] as NavItem[],
 
   // 3. Hero Section Content
@@ -128,63 +129,63 @@ export const portfolioData = {
       "Backend-focused Software Engineer specializing in scalable web architectures, API systems, automation workflows, and full-stack applications using TypeScript, NestJS, Express.js, NextJS, and Python.",
     /* "I design and build scalable backend infrastructures, automation-driven systems, and modern full-stack applications with TypeScript, Python, and cloud technologies.", */
     ctaPrimary: "View Work",
-    ctaSecondary: "Get In Touch"
+    ctaSecondary: "Get In Touch",
   },
 
   // 4. About Section
   about: {
     bio: [
       "I'm a full-stack software engineer who builds reliable, scalable and maintainable digital systems. My primary focus is backend engineering—designing APIs, data models, and system architectures that power high-performance applications.",
-      "I also enjoy crafting clean, intuitive frontends that deliver smooth user experiences and connect seamlessly with powerful backend services."
+      "I also enjoy crafting clean, intuitive frontends that deliver smooth user experiences and connect seamlessly with powerful backend services.",
     ],
     features: [
       {
         title: "Backend First",
         description: "APIs, Services, Databases",
-        icon: "Database"
+        icon: "Database",
       },
       {
         title: "Full-Stack",
         description: "Frontend + Backend Integration",
-        icon: "Code2"
+        icon: "Code2",
       },
       {
         title: "AI & Automation",
         description: "Python, AI Workflows & Integrations",
-        icon: "Brain"
+        icon: "Brain",
       },
       {
         title: "Cloud Ready",
         description: "Docker, AWS & Scalable Deployments",
-        icon: "Cloud"
-      }
+        icon: "Cloud",
+      },
     ] as Feature[],
     stats: [
       {
         label: "YEARS EXPERIENCE",
         value: "5+",
         description: "Building and delivering production-ready systems",
-        icon: "Calendar"
+        icon: "Calendar",
       },
       {
         label: "PROJECTS DELIVERED",
         value: "10+",
         description: "Web apps, APIs, platforms and automation tools",
-        icon: "Rocket"
+        icon: "Rocket",
       },
       {
         label: "CUPS OF COFFEE",
         value: "∞",
         description: "Fuel for solving complex problems",
-        icon: "Coffee"
+        icon: "Coffee",
       },
       {
         label: "USERS IMPACTED",
         value: "1k+",
         description: "Through systems that solve real-world problems",
-        icon: "Users"
-      }
-    ] as Stat[]
+        icon: "Users",
+      },
+    ] as Stat[],
   },
 
   // 5. Skills / Tech Stack
@@ -196,8 +197,8 @@ export const portfolioData = {
         { name: "Typescript", icon: "SiTypescript" },
         { name: "Python", icon: "SiPython" },
         // { name: "Rust", icon: "SiRust" },
-        { name: "PHP", icon: "SiPhp" }
-      ]
+        { name: "PHP", icon: "SiPhp" },
+      ],
     },
     {
       title: "Frontend Core",
@@ -210,8 +211,8 @@ export const portfolioData = {
         { name: "Vue.js", icon: "SiVuedotjs" },
         // { name: "Svelte", icon: "SiSvelte" },
         // { name: "Angular", icon: "SiAngular" },
-        { name: "React Native", icon: "SiReactnative" }
-      ]
+        { name: "React Native", icon: "SiReactnative" },
+      ],
     },
     {
       title: "Backend & Cloud",
@@ -228,23 +229,24 @@ export const portfolioData = {
         // { name: "AWS", icon: "SiAmazonaws" },
         { name: "Docker", icon: "SiDocker" },
         { name: "Firebase", icon: "SiFirebase" },
-        { name: "Supabase", icon: "SiSupabase" }
-      ]
+        { name: "Supabase", icon: "SiSupabase" },
+      ],
     },
     {
       title: "Advanced",
       skills: [
         // { name: "Rust", icon: "SiRust" },
-        { name: "GraphQL", icon: "SiGraphql" }
+        { name: "GraphQL", icon: "SiGraphql" },
         // { name: "WebAssembly", icon: "SiWebassembly" }
-      ]
-    }
+      ],
+    },
   ] as SkillCategory[],
 
   // 6. Architecture & System Design
   architecture: {
     title: "Development Architecture",
-    subtitle: "Modern paradigms engineered for scale, maintainability, and sub-millisecond response times.",
+    subtitle:
+      "Modern paradigms engineered for scale, maintainability, and sub-millisecond response times.",
     summary:
       "A principled approach to building resilient digital systems. By choosing modular monoliths, monorepo workspaces, and multi-tier caching architectures, complex software products can scale gracefully without suffering from premature microservice overhead.",
     pillars: [
@@ -259,8 +261,8 @@ export const portfolioData = {
           "Domain-driven bounded contexts",
           "ACID transactional guarantees across modules",
           "Zero inter-service network latency",
-          "Clean path for future microservice extraction"
-        ]
+          "Clean path for future microservice extraction",
+        ],
       },
       {
         title: "Monorepo (pnpm Workspaces)",
@@ -273,8 +275,8 @@ export const portfolioData = {
           "Shared Zod validation schemas & domain enums",
           "Unified design system and UI tokens",
           "Atomic cross-app commits and PRs",
-          "Shared typed API query hooks across frontends"
-        ]
+          "Shared typed API query hooks across frontends",
+        ],
       },
       {
         title: "Turborepo Orchestration",
@@ -287,8 +289,8 @@ export const portfolioData = {
           "Intelligent topological task scheduling",
           "Local & remote computation caching",
           "Substantially faster CI/CD pipelines",
-          "Deterministic build artifact verification"
-        ]
+          "Deterministic build artifact verification",
+        ],
       },
       {
         title: "Multi-Tier Caching (Redis & Memcached)",
@@ -301,10 +303,10 @@ export const portfolioData = {
           "Redis for session management & token rotation",
           "Memcached / In-Memory for sub-millisecond query caches",
           "Intelligent invalidation & stale-while-revalidate gates",
-          "Significant database read load reduction"
-        ]
-      }
-    ] as ArchitecturePillar[]
+          "Significant database read load reduction",
+        ],
+      },
+    ] as ArchitecturePillar[],
   },
 
   // 7. Projects (Grouped by your requested categories)
@@ -328,14 +330,15 @@ export const portfolioData = {
         "Zod",
         "TanStack Query",
         "Tailwind CSS",
-        "Paystack"
+        "Paystack",
       ],
       image: "/techclime.png",
       links: {
         demo: "https://afritrade.techclimesolutions.com/",
-        github: "https://github.com/Edimike501/afritrade-public"
+        github: "https://github.com/Edimike501/afritrade-public",
       },
-      featured: true
+      featured: false,
+      // render: true
     },
     {
       id: "afritrade-admin",
@@ -355,14 +358,15 @@ export const portfolioData = {
         "Redis",
         "Tailwind CSS",
         "shadcn/ui",
-        "Cloudflare R2"
+        "Cloudflare R2",
       ],
       image: "/techclime.png",
       links: {
         demo: "https://afritrade-admin.techclimesolutions.com/",
-        github: "https://github.com/Edimike501/afritrade-public"
+        github: "https://github.com/Edimike501/afritrade-public",
       },
-      featured: true
+      featured: false,
+      // render: true
     },
     {
       id: "1",
@@ -378,14 +382,15 @@ export const portfolioData = {
         "OAuth",
         "Express.js",
         "Redis",
-        "PostgreSQL"
+        "PostgreSQL",
       ],
       image: "/techclime.png",
       links: {
         demo: "https://techclimesolutions.com",
-        github: ""
+        github: "",
       },
-      featured: true
+      featured: true,
+      // render: true
     },
     {
       id: "2",
@@ -402,14 +407,15 @@ export const portfolioData = {
         "Redis",
         "Prisma",
         "Cloudinary",
-        "PostgreSQL"
+        "PostgreSQL",
       ],
       image: "/opollo-luxury.png",
       links: {
         demo: "https://opolloluxuries.com",
-        github: ""
+        github: "",
       },
-      featured: true
+      featured: true,
+      // render: true
     },
     {
       id: "3",
@@ -425,14 +431,15 @@ export const portfolioData = {
         "Typescript",
         "Redis",
         "MongoDB",
-        "PostgreSQL"
+        "PostgreSQL",
       ],
       image: "/techclime.png",
       links: {
         demo: "https://skillup.techclimesolutions.com",
-        github: ""
+        github: "",
       },
-      featured: true
+      featured: true,
+      // render: true
     },
     {
       id: "4",
@@ -449,14 +456,15 @@ export const portfolioData = {
         "Firebase",
         "Express.js",
         "Redis",
-        "MongoDB"
+        "MongoDB",
       ],
       image: "/vicelamoda.png",
       links: {
         demo: "https://vicelamoda.fashion",
-        github: "https://github.com/D3v-Myk3/vicelamoda-store/"
+        github: "https://github.com/D3v-Myk3/vicelamoda-store/",
       },
-      featured: true
+      featured: true,
+      // render: true
     },
     {
       id: "5",
@@ -470,14 +478,15 @@ export const portfolioData = {
         "Figma",
         "Firebase",
         "Express.js",
-        "MongoDB"
+        "MongoDB",
       ],
       image: "/vicelamoda.png",
       links: {
         demo: "https://pricis-web.vercel.app",
-        github: ""
+        github: "",
       },
-      featured: true
+      featured: true,
+      // render: true
     },
 
     {
@@ -493,12 +502,13 @@ export const portfolioData = {
         "Redis",
         "MySQL",
         "Tailwind",
-        "Figma"
+        "Figma",
       ],
       image: "/projects/nebula.jpg",
       links: { demo: "https://yunospace.com", github: "https://github.com" },
-      featured: true
-    }
+      featured: true,
+      // render: true
+    },
   ] as Project[],
 
   // 7. Partnerships
@@ -507,19 +517,19 @@ export const portfolioData = {
       companyName: "Weblizz Network",
       role: "Lead Software Architect/Engineer",
       logo: "/partners/technova.svg",
-      url: "#"
+      url: "#",
     },
     {
       companyName: "Techclime Solutions",
       role: "Lead Software Architect/Engineer",
       logo: "/partners/greengrid.svg",
-      url: "https://techclimesolutions.com"
+      url: "https://techclimesolutions.com",
     },
     {
       companyName: "Alpha Ventures",
       role: "Co-Founder",
       logo: "/partners/alpha.svg",
-      url: "#"
-    }
-  ] as Partnership[]
+      url: "#",
+    },
+  ] as Partnership[],
 };
