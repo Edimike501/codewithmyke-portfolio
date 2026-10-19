@@ -8,7 +8,7 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import { SectionHeader } from "@/components/ui/section-header";
 import { portfolioData, Project, ProjectCategory } from "@/data/portfolio";
@@ -54,7 +54,8 @@ function ProjectThumbnail({ project }: { project: Project }) {
       <div className="absolute top-4 left-4 pointer-events-none">
         <Badge
           variant="secondary"
-          className="backdrop-blur-md bg-background/50">
+          className="backdrop-blur-md bg-background/50"
+        >
           {project.category}
         </Badge>
       </div>
@@ -64,7 +65,7 @@ function ProjectThumbnail({ project }: { project: Project }) {
 
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState<"All" | ProjectCategory>(
-    "All"
+    "All",
   );
 
   const categories: ("All" | ProjectCategory)[] = [
@@ -73,13 +74,17 @@ export function Projects() {
     "Mobile App",
     "Software",
     "SaaS",
-    "Startup"
+    "Startup",
   ];
+
+  const visibleProjects = portfolioData.projects.filter(
+    (project) => project.featured !== false,
+  );
 
   const filteredProjects =
     activeCategory === "All"
-      ? portfolioData.projects
-      : portfolioData.projects.filter((p) => p.category === activeCategory);
+      ? visibleProjects
+      : visibleProjects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 relative">
@@ -99,7 +104,8 @@ export function Projects() {
                 activeCategory === category
                   ? "bg-primary/10 border-primary text-primary shadow-[0_0_10px_rgba(0,240,255,0.3)]"
                   : "bg-background/50 border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
-              }`}>
+              }`}
+            >
               {category}
             </button>
           ))}
@@ -115,7 +121,8 @@ export function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                key={project.id}>
+                key={project.id}
+              >
                 <Card className="h-full flex flex-col group hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 bg-card/40 backdrop-blur-sm">
                   <ProjectThumbnail project={project} />
 
@@ -129,7 +136,8 @@ export function Projects() {
                           href={project.links.github}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-muted-foreground hover:text-primary transition-colors">
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
                           <Github className="w-5 h-5" />
                         </a>
                       )}
@@ -157,7 +165,8 @@ export function Projects() {
                         <Badge
                           key={tech}
                           variant="outline"
-                          className="text-xs text-muted-foreground border-border/50">
+                          className="text-xs text-muted-foreground border-border/50"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -170,7 +179,8 @@ export function Projects() {
                         href={project.links.demo}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full">
+                        className="w-full"
+                      >
                         <Button variant="neon" className="w-full group/btn">
                           View Project
                           <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
